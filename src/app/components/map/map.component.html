@@ -1,0 +1,21 @@
+<header>
+    <h1 class="text-center text-3xl bg-gray-900 lg:pb-3 text-gray-200 border-b-4 border-yellow-200">Interactive World Map</h1>
+</header>
+
+<!--D.  Create an HTML layout with two columns: one column for the map itself and one column to show the required country information from the API in part B.-->
+<div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 min-h-screen bg-blue-600 ">
+  <div class="h-fit rounded-lg lg:col-span-2 min-h- lg:min-h-screen bg-blue-500 p-3 m-2 shadow-md shadow-yellow-200">
+    <app-svg-map (idEmitter)="idEvent($event)" (idEmitter)="clear()"></app-svg-map>
+  </div>
+  <div class="h-fit rounded-lg bg-blue-500 p-3 m-2 shadow-md shadow-yellow-200">
+    <p class="pb-3 font-black">Hover over country for information! Territories are not selectable.</p>
+        <h2 class="lg:text-2xl pb-3">Country: {{ api.countryName }}</h2>
+        <ul class="lg:text-xl">
+            <li>Country Capital: {{ api.countryCapital }}</li>
+            <li>Country Region: {{ api.countryRegion }}</li>
+            <li>Income level: {{ api.incomeLevel }}</li>
+            <li>Longitude: {{ api.longitude }}</li>
+            <li>Latitude: {{ api.latitude }}</li>
+        </ul>
+  </div>
+</div>
